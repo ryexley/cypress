@@ -2,6 +2,8 @@
 
 My custom theme for [Ghost](http://github.com/tryghost/ghost/), forked and adapted from the original default theme, [Casper](https://github.com/TryGhost/Casper)
 
+The name was inspired by [this](http://www.atlasobscura.com/places/ghost-tree).
+
 ## Copyright & License
 
 Copyright (C) 2013 Ghost Foundation - Released under the MIT License.
