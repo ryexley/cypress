@@ -1,6 +1,6 @@
-# Casper
+# Cypress
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+My custom theme for [Ghost](http://github.com/tryghost/ghost/), forked and adapted from the original default theme, [Caster](https://github.com/TryGhost/Casper)
 
 ## Copyright & License
 
