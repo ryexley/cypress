@@ -45,7 +45,6 @@
 }
 
 /* Import custom Norwester font */
-/* Import the font file with the icons in it */
 @font-face {
     font-family: 'Norwester';
     src:url('../fonts/norwester.eot');
@@ -252,6 +251,14 @@ pre {
     border-radius: 4px;
     font-size: 0.7em;
     line-height: 1.3em;
+    max-height: 1000px;
+}
+
+pre, code {
+    overflow-x: auto;
+    overflow-y: hidden;
+    overflow-x: touch;
+    -webkit-overflow-scrolling: touch;
 }
 
 /*
@@ -289,6 +296,7 @@ pre code, tt {
     border: none;
     padding: 0;
 }
+*/
 
 kbd {
     display: inline-block;
@@ -305,7 +313,6 @@ kbd {
         0 1px 0 rgba(0, 0, 0, 0.2),
         0 1px 0 0 #fff inset;
 }
-*/
 
 table {
     -moz-box-sizing: border-box;
