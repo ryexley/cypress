@@ -4,14 +4,14 @@
  * @author Lea Verou
  */
 
-code[class*="language-"],
+code[class*="language-"], code,
 pre[class*="language-"] {
 	color: black;
 	text-shadow: 0 1px white;
 	font-family: Consolas, Monaco, 'Andale Mono', monospace;
 	direction: ltr;
 	text-align: left;
-	white-space: pre;
+	white-space: pre-wrap;
 	word-spacing: normal;
 
 	-moz-tab-size: 4;
@@ -48,8 +48,12 @@ pre[class*="language-"] {
 	padding: 1em;
 	margin: .5em 0;
 	overflow: auto;
+    overflow-x: touch;
+    // width: 100%;
+    -webkit-overflow-scrolling: touch;
 }
 
+:not(pre) > code,
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	background: #F7FAFB; // #f5f2f0;

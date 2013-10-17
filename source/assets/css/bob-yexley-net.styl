@@ -251,14 +251,21 @@ pre {
     border-radius: 4px;
     font-size: 0.7em;
     line-height: 1.3em;
-    max-height: 1000px;
 }
 
 pre, code {
-    overflow-x: auto;
-    overflow-y: hidden;
     overflow-x: touch;
     -webkit-overflow-scrolling: touch;
+}
+
+:not(pre) > code {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 0.8em;
+    padding: 0 7px 1px 7px;
+    text-shadow: 0 1px white;
+    vertical-align: bottom;
+    white-space: pre-wrap;
 }
 
 /*
@@ -416,7 +423,7 @@ table.plain tbody > tr:nth-child(odd) > th {
     width: auto;
     margin: 0 auto;
     line-height: 0;
-    border: 2px solid rgba(0, 0, 0, 0.5);
+    // border: 2px solid rgba(247,250,251, 0.9);
     border-radius: 50%;
     float: right;
 }
