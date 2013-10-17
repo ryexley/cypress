@@ -5,7 +5,7 @@ module.exports = function (grunt) {
             compile: {
                 options: {},
                 files: {
-                    "build/assets/css/bob-yexley-net.css": ["source/assets/css/normalize.styl", "source/assets/css/bob-yexley-net.styl"]
+                    "build/assets/css/bob-yexley-net.css": ["source/assets/css/bob-yexley-net.styl"]
                 }
             }
         },

@@ -22,8 +22,11 @@
    0. Includes - Ground zero
    ========================================================================== */
 
-/* @import url(normalize.css); */
+@import "normalize.styl"
 
+@import "nib"
+
+/*! cypress style */
 
 /* ==========================================================================
    1. Icons - Sets up the icon font and respective classes
@@ -158,12 +161,12 @@ h6 {
 }
 
 a {
-    color: #4a4a4a;
+    color: #1863a1;
     transition: color ease 0.3s;
 }
 
 a:hover {
-    color: #57A3E8;
+    color: #c06;
 }
 
 h1 a, h2 a, h3 a,
@@ -244,6 +247,14 @@ mark {
     background-color: #ffc336;
 }
 
+pre {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    font-size: 0.7em;
+    line-height: 1.3em;
+}
+
+/*
 code, tt {
     padding: 1px 3px;
     font-family: Inconsolata, monospace, sans-serif;
@@ -262,7 +273,8 @@ pre {
     width: 100%;
     padding: 10px;
     font-family: Inconsolata, monospace, sans-serif;
-    font-size: 0.9em;
+    font-size: 0.75em;
+    line-height: 1.3em;
     white-space: pre;
     overflow: auto;
     background: #F7FAFB;
@@ -270,7 +282,7 @@ pre {
 }
 
 pre code, tt {
-    font-size: inherit;
+    font-size: inherit;1
     white-space: -moz-pre-wrap;
     white-space: pre-wrap;
     background: transparent;
@@ -293,6 +305,7 @@ kbd {
         0 1px 0 rgba(0, 0, 0, 0.2),
         0 1px 0 0 #fff inset;
 }
+*/
 
 table {
     -moz-box-sizing: border-box;
@@ -374,12 +387,19 @@ table.plain tbody > tr:nth-child(odd) > th {
     position: relative;
     display: table;
     width: 100%;
-    height: 60%;
+    height: 40%;
     margin-bottom: 5rem;
-    text-align: center;
+    // text-align: center;
     color: #fff;
     background: #303538 no-repeat center center;
     background-size: cover;
+}
+
+#site-head-content {
+    background: rgba(0, 0, 0, 0.4);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 10px 1em;
+    clearfix();
 }
 
 /* Yo-logo. Yolo-go. Upload one in ghost/settings/ */
@@ -389,6 +409,9 @@ table.plain tbody > tr:nth-child(odd) > th {
     width: auto;
     margin: 0 auto;
     line-height: 0;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    float: right;
 }
 
 #back {
@@ -402,7 +425,7 @@ table.plain tbody > tr:nth-child(odd) > th {
 
 /* The details of your blog. Defined in ghost/settings/ */
 .blog-title {
-    margin: 10px 0 10px 0;
+    margin: 0;
     font-size: 5rem;
     letter-spacing: -1px;
 }
@@ -782,7 +805,6 @@ table.plain tbody > tr:nth-child(odd) > th {
     top: -33px;
 }
 
-
 /* ==========================================================================
    9. Media Queries - Smaller than 900px
    ========================================================================== */
@@ -950,3 +972,5 @@ table.plain tbody > tr:nth-child(odd) > th {
    End of file. Media queries should be the last thing here. Do not add stuff
    below this point, or it will probably fuck everything up.
    ========================================================================== */
+
+@import "prism.styl"
