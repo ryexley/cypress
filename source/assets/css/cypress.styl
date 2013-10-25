@@ -590,7 +590,7 @@ table.plain tbody > tr:nth-child(odd) > th {
 /* The author credit area after the post */
 .post-footer {
     position: relative;
-    margin: 4rem 0 0 0;
+    margin: 4rem 0;
     padding: 4rem 0 0 0;
     border-top: #EBF2F6 1px solid;
 }
@@ -631,6 +631,53 @@ table.plain tbody > tr:nth-child(odd) > th {
 
 .post-footer .share a:hover {
     color: #50585D;
+}
+
+.post-comments {
+    margin: 4rem 0;
+    padding: 4rem 0 0 0;
+    border-top: #EBF2F6 1px solid;
+    clearfix();
+
+    .discussion-tabs {
+        border-bottom: #EBF2F6 1px solid;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        clearfix();
+
+        li {
+            background: #F7FAFB;
+            border-left: #EBF2F6 1px solid;
+            border-right: #EBF2F6 1px solid;
+            border-top: #EBF2F6 1px solid;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 0.75em;
+            float: left;
+            margin: 0 0.5em 0 0;
+            padding: 0.1em 1em;
+
+            border-radius: 10px 10px 0 0;
+
+            &:hover {
+                background: darken(#F7FAFB, 2.5%);
+            }
+
+            &.active {
+                background: #3A4145;
+                color: #F7FAFB;
+            }
+        }
+    }
+
+    .comments-container {
+        padding: 4rem 0;
+    }
+
+    .hidden {
+        display: none;
+    }
 }
 
 
