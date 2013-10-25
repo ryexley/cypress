@@ -132,7 +132,7 @@ table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd)
 .post-comments .discussion-tabs li{background:#f7fafb;border-left:#ebf2f6 1px solid;border-right:#ebf2f6 1px solid;border-top:#ebf2f6 1px solid;cursor:pointer;display:inline-block;font-size:.75em;float:left;margin:0 .5em 0 0;padding:.1em 1em;-webkit-border-radius:10px 10px 0 0;border-radius:10px 10px 0 0;}
 .post-comments .discussion-tabs li:hover{background:#eff5f7}
 .post-comments .discussion-tabs li.active{background:#3a4145;color:#f7fafb}
-.post-comments .comments-container{min-height:450px;padding:2rem 0 4rem 0}
+.post-comments .comments-container{min-height:375px;padding:2rem 0 4rem 0}
 .post-comments .fb-comments,.post-comments .fb-comments *{width:100% !important}
 .gist table{margin:0;font-size:1.4rem}
 .gist .line-number{min-width:25px;font-size:1.1rem}
