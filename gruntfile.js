@@ -3,7 +3,9 @@ module.exports = function (grunt) {
     var config = {
         stylus: {
             compile: {
-                options: {},
+                options: {
+                    linenos: false
+                },
                 files: {
                     "build/assets/css/cypress.css": ["source/assets/css/cypress.styl"]
                 }
