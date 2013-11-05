@@ -47,7 +47,7 @@ table{border-collapse:collapse;border-spacing:0}
 .icon-google-plus:before{content:"\e003"}
 .icon-facebook:before{content:"\e004"}
 html{height:100%;max-height:100%;font-size:62.5%}
-body{height:100%;max-height:100%;font-family:'Droid Serif',serif;font-size:2rem;line-height:1.6em;color:#3a4145}
+body{background:#fff url("../images/noise.png") top left;height:100%;max-height:100%;font-family:'Droid Serif',serif;font-size:2rem;line-height:1.6em;color:#3a4145}
 ::-moz-selection{color:#222;background:#d6edff;text-shadow:none}
 ::selection{color:#222;background:#d6edff;text-shadow:none}
 h1,h2,h3,h4,h5,h6{text-rendering:optimizeLegibility;line-height:1;margin-top:0;font-family:'Norwester','Open Sans',sans-serif;font-weight:500}
@@ -101,7 +101,8 @@ table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd)
 .post-title{margin:0}
 .post-title a{text-decoration:none}
 .post-excerpt p{margin:1.6rem 0 0 0;font-size:.9em;line-height:1.6em}
-.post-meta{display:inline-block;margin:0 0 5px 0;font-family:'Open Sans',sans-serif;font-size:1.5rem;color:#9eabb3}
+.post-meta{display:inline-block;margin:0 0 5px 0;font-family:'Open Sans',sans-serif;font-size:1.5rem;color:#9eabb3;}
+.post-meta .tags{margin:0 0 0 20px}
 .post-meta a{color:#9eabb3;text-decoration:none}
 .post-meta a:hover{text-decoration:underline}
 .user-meta{position:relative;padding:.3rem 40px 0 100px;min-height:77px}
@@ -122,8 +123,7 @@ table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd)
 .post-footer .share{position:absolute;top:4rem;right:0;width:140px}
 .post-footer .share a{font-size:1.8rem;display:inline-block;margin:1.4rem 1.6rem 1.6rem 0;color:#bbc7cc}
 .post-footer .share a:hover{color:#50585d}
-.post-footer::after{display:block;content:"";width:20px;height:20px;border:2px solid #ebf2f6;position:absolute;bottom:-2.85em;left:50%;margin-left:-10px;background:#fff;z-index:2;-webkit-border-radius:100%;border-radius:100%;-webkit-box-shadow:#fff 0 0 0 5px;box-shadow:#fff 0 0 0 5px}
-.post-comments{margin:4rem 0;padding:4rem 0 0 0;border-top:#ebf2f6 10px solid;position:relative;zoom:1;/* Make facebook comments widget fluid */}
+.post-comments{margin:4rem 0;padding:4rem 0 0 0;border-top:#ebf2f6 7px solid;position:relative;zoom:1;/* Make facebook comments widget fluid */}
 .post-comments:before,.post-comments:after{content:"";display:table}
 .post-comments:after{clear:both}
 .post-comments .discussion-tabs{border-bottom:#ebf2f6 1px solid;list-style-type:none;margin:0;padding:0;zoom:1;}

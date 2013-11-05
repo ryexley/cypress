@@ -100,6 +100,7 @@ html {
 }
 
 body {
+    background: #fff url("../images/noise.png") top left;
     height: 100%;
     max-height: 100%;
     font-family: 'Droid Serif', serif;
@@ -506,6 +507,10 @@ table.plain tbody > tr:nth-child(odd) > th {
     font-family: 'Open Sans', sans-serif;
     font-size: 1.5rem;
     color: #9EABB3;
+
+    .tags {
+        margin: 0 0 0 20px;
+    }
 }
 
 .post-meta a {
@@ -639,27 +644,27 @@ table.plain tbody > tr:nth-child(odd) > th {
     color: #50585D;
 }
 
-.post-footer::after {
-    display: block;
-    content: "";
-    width: 20px;
-    height: 20px;
-    border: 2px solid #EBF2F6;
-    position: absolute;
-    bottom: -2.85em;
-    left: 50%;
-    margin-left: -10px;
-    background #fff;
-    z-index: 2;
+// .post-footer::after {
+//     display: block;
+//     content: "";
+//     width: 20px;
+//     height: 20px;
+//     border: 2px solid #EBF2F6;
+//     position: absolute;
+//     bottom: -2.85em;
+//     left: 50%;
+//     margin-left: -10px;
+//     background #fff;
+//     z-index: 2;
 
-    border-radius: 100%;
-    box-shadow: #fff 0 0 0 5px;
-}
+//     border-radius: 100%;
+//     box-shadow: #fff 0 0 0 5px;
+// }
 
 .post-comments {
     margin: 4rem 0;
     padding: 4rem 0 0 0;
-    border-top: #EBF2F6 10px solid;
+    border-top: #EBF2F6 7px solid;
     position: relative;
     clearfix();
 

@@ -22,9 +22,8 @@
 
     <article class="{{post_class}}">
         <header class="post-header">
-            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{#if tags}}on {{tags}}{{/if}}</span>
+            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMM DD, YYYY"}}</time> {{#if tags}}<span class="tags">{ {{tags separator=", "}} }</span>{{/if}}</span>
             <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-
         </header>
         <section class="post-excerpt">
             <p>{{excerpt}}&hellip;</p>
