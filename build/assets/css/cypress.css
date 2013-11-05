@@ -102,7 +102,7 @@ table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd)
 .post-title a{text-decoration:none}
 .post-excerpt p{margin:1.6rem 0 0 0;font-size:.9em;line-height:1.6em}
 .post-meta{display:inline-block;margin:0 0 5px 0;font-family:'Open Sans',sans-serif;font-size:1.5rem;color:#9eabb3;}
-.post-meta .tags{margin:0 0 0 20px}
+.post-meta .tags{margin:0 0 0 .7em}
 .post-meta a{color:#9eabb3;text-decoration:none}
 .post-meta a:hover{text-decoration:underline}
 .user-meta{position:relative;padding:.3rem 40px 0 100px;min-height:77px}
