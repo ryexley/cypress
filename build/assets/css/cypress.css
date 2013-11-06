@@ -138,7 +138,7 @@ table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd)
 .gist .line-number{min-width:25px;font-size:1.1rem}
 .pagination{position:relative;width:80%;max-width:700px;margin:4rem auto;font-family:'Open Sans',sans-serif;font-size:1.3rem;color:#9eabb3;text-align:center}
 .pagination a{color:#9eabb3}
-.older-posts,.newer-posts{position:absolute;display:inline-block;padding:0 15px;border:1px solid #ebf2f6 2px solid;text-decoration:none;-webkit-border-radius:30px;border-radius:30px;-webkit-transition:border ease 0.3s;-moz-transition:border ease 0.3s;-o-transition:border ease 0.3s;-ms-transition:border ease 0.3s;transition:border ease 0.3s}
+.older-posts,.newer-posts{position:absolute;display:inline-block;padding:0 15px;border:2px solid #ebf2f6;text-decoration:none;-webkit-border-radius:30px;border-radius:30px;-webkit-transition:border ease 0.3s;-moz-transition:border ease 0.3s;-o-transition:border ease 0.3s;-ms-transition:border ease 0.3s;transition:border ease 0.3s}
 .older-posts{right:0}
 .page-number{display:inline-block;padding:2px 0}
 .newer-posts{left:0}
