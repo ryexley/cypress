@@ -169,7 +169,7 @@ code[class*="language-"],code,pre[class*="language-"]{color:#000;text-shadow:0 1
 pre[class*="language-"]::-moz-selection,pre[class*="language-"] ::-moz-selection,code[class*="language-"]::-moz-selection,code[class*="language-"] ::-moz-selection{text-shadow:none;background:#f7fafb}
 pre[class*="language-"]::selection,pre[class*="language-"] ::selection,code[class*="language-"]::selection,code[class*="language-"] ::selection{text-shadow:none;background:#f7fafb}
 @media print{code[class*="language-"],pre[class*="language-"]{text-shadow:none}
-}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto;overflow-x:touch;-webkit-overflow-scrolling:touch}
+}pre[class*="language-"]{padding:1em;margin:.5em 0;overflow:auto;overflow-x:touch;width:100%;-webkit-overflow-scrolling:touch}
 :not(pre) > code,:not(pre) > code[class*="language-"],pre[class*="language-"]{background:#f7fafb}
 :not(pre) > code[class*="language-"]{padding:.1em;-webkit-border-radius:.3em;border-radius:.3em}
 .token.comment,.token.prolog,.token.doctype,.token.cdata{color:#778090}
