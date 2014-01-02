@@ -921,6 +921,18 @@ table.plain tbody > tr:nth-child(odd) > th {
 @import "magnific-popup.styl"
 
 /* ==========================================================================
+   Override/fix code block word-wrap/scrolling wonkiness
+   ========================================================================== */
+
+code[class*="language-"], code, pre[class*="language-"] {
+    white-space: pre;
+}
+
+code[class*="language-"], code {
+    display: inline-block;
+}
+
+/* ==========================================================================
    9. Media Queries - Smaller than 900px
    ========================================================================== */
 
