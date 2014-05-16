@@ -270,8 +270,9 @@ code[class*="language-"],code,pre[class*="language-"]{white-space:pre}
 code[class*="language-"],code{display:inline-block}
 .gist article.markdown-body{font-family:"Open Sans";font-size:1em;line-height:1.5em;padding:.75em 1em;}
 .gist article.markdown-body h1,.gist article.markdown-body h2,.gist article.markdown-body h3,.gist article.markdown-body h4,.gist article.markdown-body h5,.gist article.markdown-body h6{font-family:"Open Sans";font-weight:bold}
+.gist article.markdown-body table{border-left:1px solid #efefef;border-right:1px solid #efefef;border-bottom:1px solid #efefef;margin-bottom:20px}
 .gist article.markdown-body hr{margin:20px 0}
-.gist article.markdown-body pre{padding:5px 10px;line-height:1.1em;overflow:auto;}
+.gist article.markdown-body pre{padding:10px;line-height:1.1em;overflow:auto;}
 .gist article.markdown-body pre code{overflow:auto}
 .gist article.markdown-body pre span{white-space:nowrap}
 .gist article.markdown-body pre code,.gist article.markdown-body pre span{font-family:Consolas,Monaco,'Andale Mono',monospace;font-size:.7em}
