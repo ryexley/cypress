@@ -944,6 +944,7 @@ code[class*="language-"], code {
 
         h1, h2, h3, h4, h5, h6 {
             font-family: "Open Sans";
+            font-weight: bold;
         }
 
         hr {
@@ -952,11 +953,16 @@ code[class*="language-"], code {
 
         pre {
             padding: 5px 10px;
+            line-height: 1.1em;
+            overflow: auto;
+
+            code {
+                overflow: auto;
+            }
 
             code, span {
                 font-family: Consolas, Monaco, 'Andale Mono', monospace;
                 font-size: 0.7em;
-                line-height: 1.1em;
             }
         }
     }
