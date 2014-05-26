@@ -130,6 +130,7 @@ table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd)
 .post-comments{margin:4rem 0;padding:4rem 0 0 0;border-top:#ebf2f6 7px solid;position:relative;zoom:1;/* Make facebook comments widget fluid */}
 .post-comments:before,.post-comments:after{content:"";display:table}
 .post-comments:after{clear:both}
+.post-comments .comments-header{margin:0 0 10px 0}
 .post-comments .discussion-tabs{border-bottom:#ebf2f6 1px solid;list-style-type:none;margin:0;padding:0;zoom:1;}
 .post-comments .discussion-tabs:before,.post-comments .discussion-tabs:after{content:"";display:table}
 .post-comments .discussion-tabs:after{clear:both}
