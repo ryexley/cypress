@@ -5,6 +5,13 @@
 
 {{! The big featured header on the homepage, with the site logo and description }}
 <header id="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div id="external-links">
+        <ul>
+            <li><a href="http://twitter.com/ryexley" target="_blank" title="Follow me on Twitter"><i class="fa fa-twitter fa-lg"></i></a></li>
+            <li><a href="http://instagram.com/ryexley" target="_blank" title="Photos"><i class="fa fa-instagram fa-lg"></i></a></li>
+            <li><a href="http://github.com/ryexley" target="_blank" title="GitHub (code)"><i class="fa fa-github fa-lg"></i></a></li>
+        </ul>
+    </div>
     <div class="vertical">
         <div id="site-head-content">
             {{#if @blog.logo}}<a id="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}

@@ -412,6 +412,31 @@ table.plain tbody > tr:nth-child(odd) > th {
     color: #fff;
     background: #303538 no-repeat center center;
     background-size: cover;
+
+    #external-links {
+        ul {
+            list-style-type: none;
+            margin: 0.35em;
+            padding: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+
+            li {
+                float: left;
+
+                a {
+                    color: rgba(255, 255, 255, 0.5);
+                    margin: 0.25em;
+                    transition: color ease 0.3s;
+
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.8);
+                    }
+                }
+            }
+        }
+    }
 }
 
 #site-head-content {
