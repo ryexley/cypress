@@ -93,7 +93,7 @@ table.plain tbody > tr:nth-child(odd) > td,table.plain tbody > tr:nth-child(odd)
 #site-head #external-links ul li{float:left;}
 #site-head #external-links ul li a{color:rgba(255,255,255,0.5);margin:.5em;text-shadow:1px 1px 0 rgba(0,0,0,0.4);-webkit-transition:color ease 0.3s;-moz-transition:color ease 0.3s;-o-transition:color ease 0.3s;-ms-transition:color ease 0.3s;transition:color ease 0.3s;}
 #site-head #external-links ul li a:hover{color:rgba(255,255,255,0.8)}
-#site-head-content{background:rgba(0,0,0,0.4);color:rgba(255,255,255,0.7);padding:10px 1em;zoom:1}
+#site-head-content{background:rgba(0,0,0,0.4);color:rgba(255,255,255,0.7);margin-left:-2px;padding:10px 1em;zoom:1}
 #site-head-content:before,#site-head-content:after{content:"";display:table}
 #site-head-content:after{clear:both}
 #blog-logo img{display:block;max-height:100px;width:auto;margin:0 auto;line-height:0;-webkit-border-radius:50%;border-radius:50%;float:right}
