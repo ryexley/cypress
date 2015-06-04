@@ -11,6 +11,9 @@ module.exports = function (grunt) {
                 }
             }
         },
+        clean: {
+            build: ["build"]
+        },
         copy: {
             main: {
                 files: [
@@ -25,15 +28,15 @@ module.exports = function (grunt) {
         watch: {
             css: {
                 files: ["source/**/*.styl"],
-                tasks: ["stylus"]
+                tasks: ["clean:build", "copy", "stylus"]
             },
             templates: {
                 files: ["source/**/*.hbs"],
-                tasks: ["copy"]
+                tasks: ["clean:build", "copy", "stylus"]
             },
             js: {
                 files: ["source/**/*.js"],
-                tasks: ["copy"]
+                tasks: ["clean:build", "copy", "stylus"]
             }
         }
     };
@@ -41,6 +44,7 @@ module.exports = function (grunt) {
     grunt.initConfig(config);
 
     grunt.loadNpmTasks("grunt-contrib-stylus");
+    grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-watch");
 

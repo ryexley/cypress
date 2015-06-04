@@ -68,3 +68,10 @@ pre.line-numbers > code{position:relative}
 .line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:0;font-size:100%;left:-3.8em;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .line-numbers-rows > span{pointer-events:none;display:block;counter-increment:linenumber}
 .line-numbers-rows > span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}
+/* Cypress styles */
+* html{font-size:100%}
+html{font-size:16px;line-height:1.5em}
+*{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
+body{font-family:"Open Sans","HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue",Helvetica,Ubuntu,Arial,Sans-Serif;font-size:16px;line-height:24px}
+header{background-position:fixed;-webkit-background-size:cover;-moz-background-size:cover;background-size:cover;height:50%;padding:1.5em;text-align:center}
+.blog-logo{-webkit-border-radius:50%;border-radius:50%;height:6em;width:6em}

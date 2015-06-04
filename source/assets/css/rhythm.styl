@@ -1,0 +1,142 @@
+// adapted from https://gist.github.com/declandewet/5697856
+
+$defaultRhythmBorderStyle = solid;
+$relativeFontSizing = true;
+$roundToNearestHalfLine = false;
+$minLinePadding = 2px;
+$fontUnit = $relativeFontSizing ? 1em : $baseFontSize;
+$baseRhythmUnit = $fontUnit * $baseLineHeight / $baseFontSize;
+$baseLeader = $fontUnit / $baseFontSize * ($baseLineHeight - $baseFontSize);
+$baseHalfLeader = $baseLeader / 2;
+
+unitless(number) {
+    unit(number) is "";
+}
+
+relativeUnit(number) {
+    unit(number) is "%" or unit(number) is "em" or unit(number) is "rem";
+}
+
+absoluteUnit(number) {
+    not(relativeUnit(number) or unitless(number));
+}
+
+if (relativeFontSizing) and (not relativeUnit($fontUnit)) {
+    warn("relativeFontSizing is true but fontUnit is set to " + $fontUnit + " which is not a relative unit");
+}
+
+$rhythm(lines = 1, fontSize = $baseFontSize, offset = 0) {
+    if (not $relativeFontSizing) and (fontSize is not $baseFontSize) {
+        warn("relative font sizing is false but a relative font size was passed to the rhythm function");
+    }
+
+    rhythm = $fontUnit * (lines * $baseLineHeight - offset) / fontSize;
+
+    if unit(rhythm) is "px" {
+        rhythm = floor(rhythm);
+    }
+
+    return rhythm;
+}
+
+adjustLeadingTo(lines, fontSize = $baseFontSize) {
+    line-height: $rhythm(lines, fontSize);
+}
+
+establishBaseline(fontSize = $baseFontSize) {
+    * html {
+        font-size: 100% * (fontSize / $browserDefaultFontSize);
+    }
+
+    html {
+        font-size: fontSize;
+        adjustLeadingTo(1, $relativeFontSizing ? fontSize : $baseFontSize);
+    }
+}
+
+debugVerticalAlignment() {
+    background-image: url("http://basehold.it/i/" + unit($baseLineHeight, ""));
+}
+
+linesForFontSize(fontSize) {
+    lines = $roundToNearestHalfLine ? ceil(2 * fontSize / $baseLineHeight) / 2 : ceil(fontSize / $baseLineHeight);
+
+    if lines * $baseLineHeight - fontSize < $minLinePadding * 2 {
+        lines = lines + ($roundToNearestHalfLine ? 0.5 : 1);
+    }
+
+    return unit(lines, "");
+}
+
+adjustFontSizeTo(toSize, lines = linesForFontSize(toSize), fromSize = $baseFontSize) {
+    if (not $relativeFontSizing) and (fromSize is not $baseFontSize) {
+        warn("relative font sizing is false but a relative font size was passed to `adjustFontSizeTo`");
+    }
+
+    font-size: $fontUnit * (toSize / fromSize);
+    adjustLeadingTo(lines, $relativeFontSizing ? toSize : $baseFontSize);
+}
+
+leader(lines = 1, fontSize = $baseFontSize, property = margin) {
+    {property}-top: $rhythm(lines, fontSize);
+}
+
+paddingLeader(lines = 1, fontSize = $baseFontSize) {
+    padding-top: $rhythm(lines, fontSize);
+}
+
+marginLeader(lines = 1, fontSize = $baseFontSize) {
+    margin-top: $rhythm(lines, fontSize);
+}
+
+trailer(lines = 1, fontSize = $baseFontSize, property = margin) {
+    {property}-bottom: $rhythm(lines, fontSize);
+}
+
+paddingTrailer(lines = 1, fontSize = $baseFontSize) {
+    padding-bottom: $rhythm(lines, fontSize);
+}
+
+marginTrailer(lines = 1, fontSize = $baseFontSize) {
+    margin-bottom: $rhythm(lines, fontSize);
+}
+
+rhythm(leader = 0, paddingLeader = 0, paddingTrailer = 0, trailer = 0, fontSize = $baseFontSize) {
+    leader(leader, fontSize);
+    paddingLeader(paddingLeader, fontSize);
+    paddingTrailer(paddingTrailer, fontSize);
+    trailer(trailer, fontSize);
+}
+
+applySideRhythmBorder(side, width = 1px, lines = 1, fontSize = $baseFontSize, borderStyle = $defaultRhythmBorderStyle) {
+    if (not $relativeFontSizing) and (fontSize is not $baseFontSize) {
+        warn("relative font sizing is false but a relative font size was passed to `applySideRhythmBorder`");
+    }
+
+    border-{side}-style: borderStyle;
+    border-{size}-width: $fontUnit * (width / fontSize);
+    padding-{size}: $rhythm(lines, fontSize, offset = width);
+}
+
+rhythmBorders(width = 1px, lines = 1, fontSize = $baseFontSize, borderStyle = $defaultRhythmBorderStyle) {
+    if (not $relativeFontSizing) and (fontSize is not $baseFontSize) {
+        warn("relative font sizing is false but a relative font size was passed to `rhythmBorders`");
+    }
+
+    border-style: borderStyle;
+    border-width: $fontUnit * (width / fontSize);
+    padding: $rhythm(lines, fontSize, offset = width);
+}
+
+leadingBorder(width = 1px, lines = 1, fontSize = $baseFontSize, borderStyle = $defaultRhythmBorderStyle) {
+    applySideRhythmBorder(top, width, lines, fontSize, borderStyle);
+}
+
+trailingBorder(width = 1px, lines = 1, fontSize = $baseFontSize, borderStyle = $defaultRhythmBorderStyle) {
+    applySideRhythmBorder(bottom, width, lines, fontSize, borderStyle);
+}
+
+horizontalBorders(width = 1px, lines = 1, fontSize = $baseFontSize, borderStyle = $defaultRhythmBorderStyle) {
+    leadingBorder(width, lines, fontSize, borderStyle);
+    trailingBorder(width, lines, fontSize, borderStyle);
+}

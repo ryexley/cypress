@@ -1,3 +1,33 @@
 @import "normalize.styl"
+@import "variables.styl"
+@import "rhythm.styl"
 @import "nib"
 @import "prism.styl"
+
+/*! Cypress styles */
+
+establishBaseline();
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $baseFont;
+    font-size: $baseFontSize;
+    line-height: $baseLineHeight;
+}
+
+header {
+    background-position: fixed;
+    background-size: cover;
+    height: 50%;
+    padding: $rhythm();
+    text-align: center;
+}
+
+.blog-logo {
+    border-radius: 50%;
+    height: $rhythm(4);
+    width: $rhythm(4);
+}
