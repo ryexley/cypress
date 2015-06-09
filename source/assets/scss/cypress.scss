@@ -1,0 +1,60 @@
+@import "normalize";
+@import "variables";
+@import "utilities";
+@import "rhythm";
+@import "media";
+@import "prism";
+@import "icons";
+
+/*! Cypress styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $base-font;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.3);
+    height: $header-height;
+    left: 0;
+    padding: rhythm();
+    position: absolute;
+    text-align: center;
+    top: 0;
+    width: 100%;
+}
+
+.blog-logo {
+    border-radius: 50%;
+    box-shadow: 0px 0px 17px rgba(0, 0, 0, 1);
+    height: rhythm(4);
+    width: rhythm(4);
+
+    @include minWidth($bp-desktop) {
+    }
+}
+
+.blog-title,
+.blog-title a {
+    color: $blog-title-color;
+    font-weight: $font-weight--normal;
+    text-decoration: none;
+}
+
+.blog-description {
+    color: $blog-description-color;
+    font-weight: $font-weight--normal;
+}
+
+.feature-image {
+    height: $header-height;
+}
+
+.main-content {
+    height: rhythm(100);
+}
