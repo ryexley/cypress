@@ -165,6 +165,12 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* line 421, ../../../source/assets/scss/_normalize.scss */
 td, th { padding: 0; }
 
+/*
+* Scut, a collection of Sass utilities
+* to ease and improve our implementations of common style-code patterns.
+* v1.1.3
+* Docs at http://davidtheclark.github.io/scut
+*/
 /*!
  * prism.js default theme for JavaScript, CSS and HTML
  * Based on dabblet (http://dabblet.com)
@@ -263,26 +269,28 @@ Example showing how to change the color/size of the icons:
 .icon-tags { width: 1.25em; }
 
 /*! Cypress styles */
-/* line 11, ../../../source/assets/scss/cypress.scss */
+/* line 12, ../../../source/assets/scss/cypress.scss */
 * { box-sizing: border-box; }
 
-/* line 15, ../../../source/assets/scss/cypress.scss */
+/* line 16, ../../../source/assets/scss/cypress.scss */
 body { font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Ubuntu, Arial, Sans-Serif; font-size: 16px; line-height: 24px; }
 
-/* line 21, ../../../source/assets/scss/cypress.scss */
+/* line 22, ../../../source/assets/scss/cypress.scss */
 header { background: rgba(0, 0, 0, 0.3); height: 20em; left: 0; padding: 1.5em; position: absolute; text-align: center; top: 0; width: 100%; }
 
-/* line 32, ../../../source/assets/scss/cypress.scss */
+/* line 33, ../../../source/assets/scss/cypress.scss */
 .blog-logo { border-radius: 50%; box-shadow: 0px 0px 17px black; height: 6em; width: 6em; }
+@media screen and (min-width: 64em) { /* line 33, ../../../source/assets/scss/cypress.scss */
+  .blog-logo { position: absolute; top: 1.5em; right: 1.5em; } }
 
-/* line 42, ../../../source/assets/scss/cypress.scss */
+/* line 44, ../../../source/assets/scss/cypress.scss */
 .blog-title, .blog-title a { color: #f7f7f7; font-weight: 300; text-decoration: none; }
 
-/* line 49, ../../../source/assets/scss/cypress.scss */
+/* line 51, ../../../source/assets/scss/cypress.scss */
 .blog-description { color: #f7f7f7; font-weight: 300; }
 
-/* line 54, ../../../source/assets/scss/cypress.scss */
+/* line 56, ../../../source/assets/scss/cypress.scss */
 .feature-image { height: 20em; }
 
-/* line 58, ../../../source/assets/scss/cypress.scss */
+/* line 60, ../../../source/assets/scss/cypress.scss */
 .main-content { height: 150em; }

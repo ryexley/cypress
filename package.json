@@ -14,6 +14,7 @@
     "grunt-contrib-stylus": "~0.8.0",
     "grunt-contrib-watch": "~0.5.3",
     "nib": "~1.0.1",
-    "normalize.css": "^3.0.3"
+    "normalize.css": "^3.0.3",
+    "scut": "^1.1.3"
   }
 }

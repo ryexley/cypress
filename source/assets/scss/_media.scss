@@ -1,17 +1,17 @@
 @mixin minWidth($min-width) {
-    @media screen and (min-width: em($min-width)) {
+    @media screen and (min-width: scut-em($min-width)) {
         @content;
     }
 }
 
 @mixin maxWidth($max-width) {
-    @media screen and (max-width: em($max-width)) {
+    @media screen and (max-width: scut-em($max-width)) {
         @content;
     }
 }
 
 @mixin between($min-width, $max-width) {
-    @media screen and (min-width: em($min-width)) and (max-width: em($max-width)) {
+    @media screen and (min-width: scut-em($min-width)) and (max-width: scut-em($max-width)) {
         @content;
     }
 }

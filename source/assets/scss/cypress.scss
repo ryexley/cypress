@@ -1,4 +1,5 @@
 @import "normalize";
+@import "../../../node_modules/scut/dist/scut";
 @import "variables";
 @import "utilities";
 @import "rhythm";
@@ -36,6 +37,7 @@ header {
     width: rhythm(4);
 
     @include minWidth($bp-desktop) {
+        @include scut-absolute(rhythm() rhythm() n n);
     }
 }
 
