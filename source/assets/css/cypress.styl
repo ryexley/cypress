@@ -1,8 +1,11 @@
 @import "normalize.styl"
-@import "variables.styl"
 @import "rhythm.styl"
+@import "variables.styl"
+@import "media.styl"
+@import "utilities.styl"
 @import "nib"
 @import "prism.styl"
+@import "icons.styl"
 
 /*! Cypress styles */
 
@@ -19,15 +22,43 @@ body {
 }
 
 header {
-    background-position: fixed;
-    background-size: cover;
-    height: 50%;
+    background: rgba(0, 0, 0, 0.3);
+    height: $headerHeight;
+    left: 0;
     padding: $rhythm();
+    position: absolute;
     text-align: center;
+    top: 0;
+    width: 100%;
 }
 
 .blog-logo {
     border-radius: 50%;
+    box-shadow: 0px 0px 17px rgba(0, 0, 0, 1);
     height: $rhythm(4);
     width: $rhythm(4);
+
+    +$minWidth($bpDesktop) {
+        display: none;
+    }
+}
+
+.blog-title,
+.blog-title a {
+    color: $blogTitleColor;
+    font-weight: $fontWeightNormal;
+    text-decoration: none;
+}
+
+.blog-description {
+    color: $blogDescriptionColor;
+    font-weight: $fontWeightNormal;
+}
+
+.feature-image {
+    height: $headerHeight;
+}
+
+.main-content {
+    height: $rhythm(100);
 }

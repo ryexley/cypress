@@ -22,7 +22,9 @@
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+    {{> icons}}
     {{> header}}
+    {{> feature-image}}
 
     {{! Everything else gets inserted here }}
     {{{body}}}
@@ -35,6 +37,7 @@
     {{! The main JavaScript file for Casper }}
     <script src="/assets/js/index.js"></script>
     <script src="/assets/js/prism.js"></script>
+    <script src="/assets/js/parallax.min.js"></script>
     <script>
         var _gaq = _gaq || [];
         _gaq.push(["_setAccount", "UA-273382-3"]);

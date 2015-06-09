@@ -23,20 +23,33 @@ module.exports = function (grunt) {
                     { cwd: "source", src: "assets/images/*", dest: "build/", expand: true },
                     { cwd: "source", src: "package.json", dest: "build/", expand: true }
                 ]
+            },
+            "icon-styles": {
+                files: [
+                    {
+                        cwd: "source/assets/icons/icomoon",
+                        src: "style.css",
+                        dest: "source/assets/css/",
+                        expand: true,
+                        rename: function (dest, src) {
+                            return dest + "icons.styl";
+                        }
+                    }
+                ]
             }
         },
         watch: {
             css: {
                 files: ["source/**/*.styl"],
-                tasks: ["clean:build", "copy", "stylus"]
+                tasks: ["clean:build", "copy:icon-styles", "stylus", "copy:main"]
             },
             templates: {
                 files: ["source/**/*.hbs"],
-                tasks: ["clean:build", "copy", "stylus"]
+                tasks: ["clean:build", "stylus", "copy:main"]
             },
             js: {
                 files: ["source/**/*.js"],
-                tasks: ["clean:build", "copy", "stylus"]
+                tasks: ["clean:build", "stylus", "copy:main"]
             }
         }
     };
@@ -48,6 +61,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-watch");
 
-    grunt.registerTask("default", ["stylus", "copy"]);
+    grunt.registerTask("default", ["clean:build", "copy:icon-styles", "stylus", "copy:main"]);
 
 };

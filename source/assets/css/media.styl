@@ -1,0 +1,49 @@
+// https://github.com/jackbrewer/stylus-mixins/blob/master/lib/stylus-mixins/media/width-height.styl
+
+$noMq ?= false;
+
+$minWidth($width) {
+    +buildMediaQuery($minVal = $width) {
+        {block}
+    }
+}
+
+buildMediaQuery($direction = "width", $type = "min", $minVal, $maxVal = false) {
+    if ($noMq == true) {
+        noMediaQuery($direction, $type, $minVal, $maxVal) {
+            {block}
+        }
+    } else {
+        $mq = "";
+
+        if ($type == "min" || $type == "max") {
+            $mq = "screen and (" + $type + "-" + $direction + ": " + $minVal + ")"
+        }
+
+        if ($type == "range") {
+            $mq = "screen and (min-" + $direction + ": " + $minVal + ") and (max-" + $direction + ": " + $maxVal + ")"
+        }
+
+        @media $mq {
+            {block}
+        }
+    }
+}
+
+noMediaQuery($direction = "width", $type = "min", $minVal, $maxVal) {
+    if ($direction == "width") {
+        if ($type == "min") {
+            if ($fixedWidthMin >= $minVal) {
+                {block}
+            }
+        } else if ($type == "max") {
+            if ($fixedWidthMax <= $minVal) {
+                {block}
+            }
+        } else if ($type == "range") {
+            if ($fixedWidthMin >= $minVal && $fixedWidthMax <= $maxVal) {
+                {block}
+            }
+        }
+    }
+}
