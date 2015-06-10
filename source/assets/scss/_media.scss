@@ -1,17 +1,33 @@
 @mixin minWidth($min-width) {
-    @media screen and (min-width: scut-em($min-width)) {
+    @if unit($min-width) != "em" {
+        $min-width: scut-em($min-width)
+    }
+
+    @media screen and (min-width: $min-width) {
         @content;
     }
 }
 
 @mixin maxWidth($max-width) {
-    @media screen and (max-width: scut-em($max-width)) {
+    @if unit($max-width) != "em" {
+        $max-width: scut-em($max-width)
+    }
+
+    @media screen and (max-width: $max-width) {
         @content;
     }
 }
 
 @mixin between($min-width, $max-width) {
-    @media screen and (min-width: scut-em($min-width)) and (max-width: scut-em($max-width)) {
+    @if unit($min-width) != "em" {
+        $min-width: scut-em($min-width)
+    }
+
+    @if unit($max-width) != "em" {
+        $max-width: scut-em($max-width)
+    }
+
+    @media screen and (min-width: $min-width) and (max-width: $max-width) {
         @content;
     }
 }

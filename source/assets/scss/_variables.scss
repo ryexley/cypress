@@ -12,6 +12,11 @@ $blog-description-color: #f7f7f7;
 $fixed-width--min: 960px;
 $fixed-width--max: 1200px;
 
+// generic, relative-sized breakpoints
+$bp-small: rhythm(20);
+$bp-medium: rhythm(32.5);
+$bp-large: rhythm(45);
+
 $bp-phone--wide: 640;
 $bp-tablet: 768;
 $bp-laptop: 1024;
