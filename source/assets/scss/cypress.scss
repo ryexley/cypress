@@ -19,7 +19,7 @@ body {
     line-height: $base-line-height;
 }
 
-header {
+header.main {
     background: rgba(0, 0, 0, 0.3);
     height: $header-height;
     left: 0;
@@ -59,4 +59,63 @@ header {
 
 .main-content {
     height: rhythm(100);
+
+    @include minWidth($bp-phone--wide) {
+        padding: rhythm();
+    }
+}
+
+ul.post-stack {
+    @include scut-list-unstyled;
+
+    @include minWidth($bp-phone--wide) {
+        @include scut-list-floated;
+    }
+}
+
+.post-card {
+    background-size: cover;
+    border: 1px solid #eee;
+    height: rhythm(10);
+    margin: 0 0 rhythm() 0;
+    padding: rhythm();
+
+    @include minWidth($bp-phone--wide) {
+        width: 50%;
+
+        &:nth-child(odd) {
+            float: left;
+        }
+
+        &:nth-child(even) {
+            float: right;
+        }
+    }
+
+    @include minWidth($bp-laptop) {
+        width: 33.3333333%;
+    }
+
+    @include minWidth($bp-desktop) {
+        width: 25%;
+    }
+
+    @include minWidth($bp-desktop--retina) {
+        width: 20%;
+    }
+
+    article {
+    }
+
+    .post-card-title {
+        margin: 0 0 rhythm(0.5) 0;
+    }
+
+    .post-card-clip {
+
+    }
+
+    .post-card-meta {
+
+    }
 }

@@ -1,0 +1,16 @@
+<ul class="post-stack">
+{{#foreach posts}}
+    <li class="post-card" {{#if image}}style="background-image: url({{image}})"{{/if}}>
+        <article class="{{post_class}}">
+            <header>
+                <h4 class="post-card-title"><a href="{{url}}">{{{title}}}</a></h4>
+            </header>
+            <section class="post-card-clip">
+                <p>{{excerpt words="26"}}</p>
+            </section>
+            <footer>
+            </footer>
+        </article>
+    </li>
+{{/foreach}}
+</ul>

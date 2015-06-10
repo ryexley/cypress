@@ -276,11 +276,11 @@ Example showing how to change the color/size of the icons:
 body { font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Ubuntu, Arial, Sans-Serif; font-size: 16px; line-height: 24px; }
 
 /* line 22, ../../../source/assets/scss/cypress.scss */
-header { background: rgba(0, 0, 0, 0.3); height: 20em; left: 0; padding: 1.5em; position: absolute; text-align: center; top: 0; width: 100%; }
+header.main { background: rgba(0, 0, 0, 0.3); height: 20em; left: 0; padding: 1.5em; position: absolute; text-align: center; top: 0; width: 100%; }
 
 /* line 33, ../../../source/assets/scss/cypress.scss */
 .blog-logo { border-radius: 50%; box-shadow: 0px 0px 17px black; height: 6em; width: 6em; }
-@media screen and (min-width: 64em) { /* line 33, ../../../source/assets/scss/cypress.scss */
+@media screen and (min-width: 80em) { /* line 33, ../../../source/assets/scss/cypress.scss */
   .blog-logo { position: absolute; top: 1.5em; right: 1.5em; } }
 
 /* line 44, ../../../source/assets/scss/cypress.scss */
@@ -294,3 +294,31 @@ header { background: rgba(0, 0, 0, 0.3); height: 20em; left: 0; padding: 1.5em; 
 
 /* line 60, ../../../source/assets/scss/cypress.scss */
 .main-content { height: 150em; }
+@media screen and (min-width: 40em) { /* line 60, ../../../source/assets/scss/cypress.scss */
+  .main-content { padding: 1.5em; } }
+
+/* line 68, ../../../source/assets/scss/cypress.scss */
+ul.post-stack { list-style-type: none; padding-left: 0; margin-top: 0; margin-bottom: 0; }
+@media screen and (min-width: 40em) { /* line 68, ../../../source/assets/scss/cypress.scss */
+  ul.post-stack { list-style-type: none; padding-left: 0; margin-top: 0; margin-bottom: 0; }
+  /* line 10, ../../../node_modules/scut/dist/_scut.scss */
+  ul.post-stack:after { content: ""; display: table; clear: both; }
+  /* line 49, ../../../node_modules/scut/dist/_scut.scss */
+  ul.post-stack > li { float: left; } }
+
+/* line 76, ../../../source/assets/scss/cypress.scss */
+.post-card { background-size: cover; border: 1px solid #eee; height: 15em; margin: 0 0 1.5em 0; padding: 1.5em; }
+@media screen and (min-width: 40em) { /* line 76, ../../../source/assets/scss/cypress.scss */
+  .post-card { width: 50%; }
+  /* line 86, ../../../source/assets/scss/cypress.scss */
+  .post-card:nth-child(odd) { float: left; }
+  /* line 90, ../../../source/assets/scss/cypress.scss */
+  .post-card:nth-child(even) { float: right; } }
+@media screen and (min-width: 64em) { /* line 76, ../../../source/assets/scss/cypress.scss */
+  .post-card { width: 33.3333333%; } }
+@media screen and (min-width: 80em) { /* line 76, ../../../source/assets/scss/cypress.scss */
+  .post-card { width: 25%; } }
+@media screen and (min-width: 90em) { /* line 76, ../../../source/assets/scss/cypress.scss */
+  .post-card { width: 20%; } }
+/* line 110, ../../../source/assets/scss/cypress.scss */
+.post-card .post-card-title { margin: 0 0 0.75em 0; }
