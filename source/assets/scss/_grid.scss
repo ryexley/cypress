@@ -1,150 +1,67 @@
-// Adapted from https://github.com/trevanhetzel/barekit/blob/master/css/sass/module/_grid.scss
-// See the link below for documentation:
-// http://trevanhetzel.github.io/barekit/
+/////////////////
+// Semantic.gs // for SCSS: http://sass-lang.com/
+/////////////////
 
-$grid-width: 8.3333333%;
-$gutter: null !default;
+// Defaults which you can freely override
+$column-width: 60px;
+$gutter-width: 20px;
+$columns: 12;
 
+// Utility function — you should never need to modify this
+@function gridsystem-width($columns:$columns) {
+    @return ($column-width * $columns) + ($gutter-width * $columns);
+}
 
-// Default
-@for $i from 1 through 12 {
-    // width
-    .df-#{$i} {
-        width: $grid-width * $i;
+// Set $total-width to 100% for a fluid layout
+$total-width: gridsystem-width($columns);
+
+// Uncomment these two lines and the star-hack width/margin lines below to enable sub-pixel fix for IE6 & 7. See http://tylertate.com/blog/2012/01/05/subpixel-rounding.html
+// $min-width: 999999;
+// $correction: 0.5 / $min-width * 100;
+
+// The micro clearfix http://nicolasgallagher.com/micro-clearfix-hack/
+@mixin clearfix() {
+    *zoom:1;
+
+    &:before,
+    &:after {
+        content:"";
+        display:table;
     }
-
-    .df-#{$i}-half {
-        width: $grid-width * $i + ($grid-width / 2);
-    }
-
-    // offset
-    .df-offset-#{$i} {
-        margin-left: $grid-width * $i;
-    }
-
-    .df-offset-#{$i}-half {
-        margin-left: $grid-width * $i + ($grid-width / 2);
+    &:after {
+        clear:both;
     }
 }
 
-// Small
-@include minWidth($bp-small) {
-    @for $i from 1 through 12 {
-        // width
-        .sm-#{$i} {
-            width: $grid-width * $i;
-        }
 
-        .sm-#{$i}-half {
-            width: $grid-width * $i + ($grid-width / 2);
-        }
+//////////
+// GRID //
+//////////
 
-        // offset
-        .sm-offset-#{$i} {
-            margin-left: $grid-width * $i;
-        }
-
-        .sm-offset-#{$i}-half {
-            margin-left: $grid-width * $i + ($grid-width / 2);
-        }
-    }
+body {
+    width: 100%;
+    @include clearfix();
 }
 
-// Medium
-@include minWidth($bp-medium) {
-    @for $i from 1 through 12 {
-        // width
-        .md-#{$i} {
-            width: $grid-width * $i;
-        }
-
-        .md-#{$i}-half {
-            width: $grid-width * $i + ($grid-width / 2);
-        }
-
-        // offset
-        .md-offset-#{$i} {
-            margin-left: $grid-width * $i;
-        }
-
-        .md-offset-#{$i}-half {
-            margin-left: $grid-width * $i + ($grid-width / 2);
-        }
-    }
+@mixin row($columns:$columns) {
+    display: block;
+    width: $total-width*(($gutter-width + gridsystem-width($columns))/gridsystem-width($columns));
+    margin: 0 $total-width*((($gutter-width*.5)/gridsystem-width($columns))*-1);
+    // *width: $total-width*(($gutter-width + gridsystem-width($columns))/gridsystem-width($columns))-$correction;
+    // *margin: 0 $total-width*((($gutter-width*.5)/gridsystem-width($columns))*-1)-$correction;
+    @include clearfix();
 }
-
-// Large
-@include minWidth($bp-large) {
-    @for $i from 1 through 12 {
-        // width
-        .lg-#{$i} {
-            width: $grid-width * $i;
-        }
-
-        .lg-#{$i}-half {
-            width: $grid-width * $i + ($grid-width / 2);
-        }
-
-        // offset
-        .lg-offset-#{$i} {
-            margin-left: $grid-width * $i;
-        }
-
-        .lg-offset-#{$i}-half {
-            margin-left: $grid-width * $i + ($grid-width / 2);
-        }
-    }
-}
-
-// 0 halves
-.sm-half {
-    width: $grid-width / 2;
-}
-
-.sm-offset-half {
-    margin-left: $grid-width / 2;
-}
-
-@include minWidth($bp-medium) {
-    .md-half {
-        width: $grid-width / 2;
-    }
-
-    .md-offset-0 {
-        margin: 0;
-    }
-
-    .md-offset-half {
-        margin-left: $grid-width / 2;
-    }
-}
-
-@include minWidth($bp-large) {
-    .lg-half {
-        width: $grid-width / 2;
-    }
-
-    .lg-offset-0 {
-        margin-left: 0;
-    }
-
-    .lg-offset-half {
-        margin-left: $grid-width / 2;
-    }
-}
-
-// Box model
-.has-gutter {
+@mixin column($x,$columns:$columns) {
+    display: inline;
     float: left;
-    padding: 0 var($gutter, 20px) / 2;
+    width: $total-width*(((($gutter-width+$column-width)*$x)-$gutter-width) / gridsystem-width($columns));
+    margin: 0 $total-width*(($gutter-width*.5)/gridsystem-width($columns));
+    // *width: $total-width*(((($gutter-width+$column-width)*$x)-$gutter-width) / gridsystem-width($columns))-$correction;
+    // *margin: 0 $total-width*(($gutter-width*.5)/gridsystem-width($columns))-$correction;
 }
-
-.row {
-    @extend %cf;
-
-    .row {
-        .has-gutter {
-            padding: 0;
-        }
-    }
+@mixin push($offset:1) {
+    margin-left: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width*.5)/gridsystem-width($columns));
+}
+@mixin pull($offset:1) {
+    margin-right: $total-width*((($gutter-width+$column-width)*$offset) / gridsystem-width($columns)) + $total-width*(($gutter-width*.5)/gridsystem-width($columns));
 }

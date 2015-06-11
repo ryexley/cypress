@@ -1,10 +1,10 @@
 @import "normalize";
 @import "../../../node_modules/scut/dist/scut";
 @import "rhythm";
+@import "grid";
 @import "variables";
 @import "utilities";
 @import "media";
-@import "grid";
 @import "prism";
 @import "icons";
 
@@ -68,14 +68,30 @@ header.main {
 
 ul.post-stack {
     @include scut-list-unstyled;
+    @include row;
 }
 
 .post-card {
     background-size: cover;
-    margin-bottom: rhythm();
-    min-height: rhythm(10);
+    border: 1px solid #eee;
+    margin-bottom: rhythm() !important;
+    height: $post-card-height;
+    overflow: hidden;
 
-    article {}
+    @include minWidth($bp-phone--wide) {
+        @include column(6);
+    }
+
+    @include minWidth($bp-tablet--wide) {
+        @include column(4);
+    }
+
+    article {
+        background: rgba(0, 0, 0, 0.7);
+        color: $post-card-text-color;
+        height: $post-card-height;
+        padding: rhythm();
+    }
 
     .post-card-title {
         margin: 0 0 rhythm(0.5) 0;

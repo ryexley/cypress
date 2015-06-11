@@ -4,6 +4,8 @@ $font-weight--normal: 300;
 $font-weight--semibold: 600;
 $font-weight--bold: 800;
 
+$total-width: 100%;
+
 $header-height: 20em; // $rhythm(15);
 
 $blog-title-color: #f7f7f7;
@@ -19,6 +21,11 @@ $bp-large: rhythm(45);
 
 $bp-phone--wide: 640;
 $bp-tablet: 768;
+$bp-tablet--wide: 880;
 $bp-laptop: 1024;
 $bp-desktop: 1280;
 $bp-desktop--retina: 1440;
+
+// posts
+$post-card-height: rhythm(10);
+$post-card-text-color: #eee;
