@@ -66,17 +66,29 @@ module.exports = function (grunt) {
                 files: ["source/**/*.js"],
                 tasks: ["clean:build", "style", "copy:main"]
             }
+        },
+        browserSync: {
+            dev: {
+                options: {
+                    watchTask: true,
+                    files: ["build/**/*.*"],
+                    proxy: "localhost:2368",
+                    port: 7000,
+                    open: false
+                }
+            }
         }
     };
 
     grunt.initConfig(config);
 
+    grunt.loadNpmTasks("grunt-browser-sync");
     grunt.loadNpmTasks("grunt-contrib-sass");
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-watch");
 
-    grunt.registerTask("style", ["copy:normalize", "copy:icon-styles", "sass"]);
     grunt.registerTask("default", ["clean:build", "style", "copy:main"]);
-
+    grunt.registerTask("style", ["copy:normalize", "copy:icon-styles", "sass"]);
+    grunt.registerTask("dev", ["browserSync", "watch"]);
 };
