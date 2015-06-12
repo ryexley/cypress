@@ -1,16 +1,31 @@
-<ul class="post-stack">
+<ul class="featured-posts">
 {{#foreach posts}}
-    <li class="post-card" {{#if image}}style="background-image: url({{image}})"{{/if}}>
+    {{#if featured}}
+    <li class="featured-post">
         <article class="{{post_class}}">
             <header>
-                <h4 class="post-card-title"><a href="{{url}}">{{{title}}}</a></h4>
+                <a href="{{url}}"><h2 class="featured-post-title">{{title}}</h2></a>
             </header>
-            <section class="post-card-clip">
-                <p>{{excerpt words="20"}}...</p>
+            <section class="featured-post-clip">
+                <p>{{excerpt words="50"}}</p>
             </section>
-            <footer>
+            <footer class="featured-post-meta">
             </footer>
         </article>
+    </li>
+    {{/if}}
+{{/foreach}}
+</ul>
+<ul class="post-stack">
+{{#foreach posts}}
+    <li class="post-card">
+        <a href="{{url}}">
+            <section class="post-card-header {{post_class}}" {{#if image}}style="background-image: url({{image}})"{{/if}}>
+            </section>
+            <section class="post-card-title-container">
+                <h4 class="post-card-title">{{title}}</h4>
+            </section>
+        </a>
     </li>
 {{/foreach}}
 </ul>

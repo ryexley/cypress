@@ -13,6 +13,18 @@ module.exports = function (grunt) {
                 }
             }
         },
+        postcss: {
+            options: {
+                map: true,
+                processors: [
+                    require("autoprefixer-core")({ browsers: "last 2 versions, ie >= 8"}),
+                    require("csswring")
+                ]
+            },
+            dist: {
+                src: "build/assets/css/*.css"
+            }
+        },
         clean: {
             build: ["build"]
         },
@@ -84,11 +96,12 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks("grunt-browser-sync");
     grunt.loadNpmTasks("grunt-contrib-sass");
+    grunt.loadNpmTasks("grunt-postcss");
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-watch");
 
     grunt.registerTask("default", ["clean:build", "style", "copy:main"]);
-    grunt.registerTask("style", ["copy:normalize", "copy:icon-styles", "sass"]);
+    grunt.registerTask("style", ["copy:normalize", "copy:icon-styles", "sass", "postcss"]);
     grunt.registerTask("dev", ["browserSync", "watch"]);
 };

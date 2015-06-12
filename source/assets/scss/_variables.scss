@@ -1,12 +1,17 @@
 $base-font: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Ubuntu, Arial, Sans-Serif;
 
+$background-color: #fff;
+
+$link-color: #0cf;
+$link-hover-color: #f00;
+
 $font-weight--normal: 300;
 $font-weight--semibold: 600;
 $font-weight--bold: 800;
 
 $total-width: 100%;
 
-$header-height: 20em; // $rhythm(15);
+$header-height: rhythm(12);
 
 $blog-title-color: #f7f7f7;
 $blog-description-color: #f7f7f7;
@@ -27,5 +32,7 @@ $bp-desktop: 1280;
 $bp-desktop--retina: 1440;
 
 // posts
-$post-card-height: rhythm(10);
-$post-card-text-color: #eee;
+$post-card-border-color: #f7fafa;
+$post-card-height: rhythm(8);
+$post-card-section-height: rhythm(4);
+$post-card-title-color: #444;
