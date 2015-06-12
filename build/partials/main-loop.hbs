@@ -7,7 +7,7 @@
                 <a href="{{url}}"><h2 class="featured-post-title">{{title}}</h2></a>
             </header>
             <section class="featured-post-clip">
-                <p>{{excerpt words="50"}}</p>
+                <p>{{excerpt words="50"}}... <a href="{{url}}"><em>keep reading</em></a></p>
             </section>
             <footer class="featured-post-meta">
             </footer>
@@ -18,7 +18,7 @@
 </ul>
 <ul class="post-stack">
 {{#foreach posts}}
-    <li class="post-card">
+    <li class="post-card {{post_class}}">
         <a href="{{url}}">
             <article {{#if image}}style="background-image: url({{image}})"{{/if}}>
                 <section class="post-card-info">
@@ -40,3 +40,4 @@
     </li>
 {{/foreach}}
 </ul>
+{{pagination}}

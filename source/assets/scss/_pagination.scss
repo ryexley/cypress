@@ -1,0 +1,24 @@
+.pagination {
+    @include row;
+    display: block;
+    text-align: center;
+}
+
+.pagination-previous,
+.pagination-next {
+    @include column(6);
+
+    min-height: rhythm();
+    text-align: center;
+}
+
+.pagination-previous {}
+
+.pagination-next {}
+
+.pagination-previous-link,
+.pagination-next-link {
+    display: block;
+    font-size: rhythm(2);
+    text-decoration: none;
+}

@@ -1,0 +1,13 @@
+<nav class="pagination" role="navigation">
+    <div class="pagination-pages">Page {{page}} of {{pages}}</div>
+    <div class="pagination-previous">
+    {{#if prev}}
+        <a class="pagination-previous-link" href="{{page_url prev}}"><svg class="icon icon-angle-left"><use xlink:href="#icon-angle-left"></use></svg></a>
+    {{/if}}
+    </div>
+    <div class="pagination-next">
+    {{#if next}}
+        <a class="pagination-next-link" href="{{page_url next}}"><svg class="icon icon-angle-right"><use xlink:href="#icon-angle-right"></use></svg></a>
+    {{/if}}
+    </div>
+</nav>

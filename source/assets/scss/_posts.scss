@@ -1,4 +1,5 @@
-$post-card-border-color: #f7fafa;
+$post-card-default-background-color: #999;
+$post-card-border-color: #f7fafb;
 $post-card-height: rhythm(8);
 $post-card-info-height: rhythm(4);
 $post-card-section-height: rhythm(4);
@@ -9,13 +10,37 @@ ul.featured-posts {
 }
 
 .featured-post {
+    border-bottom: 1px solid $separator-color;
+    margin: 0 0 rhythm(2) 0;
     padding: rhythm();
+    position: relative;
 
     @include minWidth($bp-phone--wide) {
         padding: 0;
+        padding-bottom: rhythm();
+    }
+
+    &:after {
+        background: #fff;
+        bottom: rhythm(-0.375);
+        color: $separator-color;
+        content: "\272F";
+        height: rhythm(0.75);
+        font-size: rhythm();
+        left: 48%;
+        margin: auto;
+        position: absolute;
+        text-align: center;
+        width: rhythm(0.75);
+    }
+
+    a {
+        text-decoration: none;
     }
 
     .featured-post-title {
+        display: inline;
+        font-weight: $font-weight--normal;
         margin: 0 0 rhythm(0.5);
     }
 }
@@ -26,6 +51,7 @@ ul.post-stack {
 }
 
 .post-card {
+    background: $post-card-default-background-color;
     height: $post-card-height;
     overflow: hidden;
 
@@ -43,8 +69,21 @@ ul.post-stack {
         @include column(3);
     }
 
+    @import "post-card-tags";
+
+    a, a:visited {
+        color: $post-card-info-color;
+
+        &:hover {
+            color: $link-hover-color;
+
+            .post-card-info {
+                background: rgba(0, 0, 0, 0.7);
+            }
+        }
+    }
+
     article {
-        @include linear-gradient(135deg, $post-card-border-color, #eee);
         background-position: center;
         background-repeat:  no-repeat;
         background-size: cover;
@@ -55,7 +94,7 @@ ul.post-stack {
     .post-card-info {
         background: rgba(0, 0, 0, 0.5);
         bottom: 0;
-        color: $post-card-info-color;
+        // color: $post-card-info-color;
         height: $post-card-info-height;
         padding: rhythm();
         position: absolute;
@@ -74,6 +113,7 @@ ul.post-stack {
     .post-card-tags {
         @include cf;
         bottom: rhythm();
+        display: none;
         font-size: $font-size--xs;
         left: rhythm();
         position: absolute;
@@ -81,6 +121,7 @@ ul.post-stack {
 
         @include minWidth($bp-phone--wide) {
             bottom: rhythm(0.5);
+            display: block;
             left: rhythm(0.5);
             right: rhythm(0.5);
         }
