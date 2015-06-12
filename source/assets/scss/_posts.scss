@@ -1,0 +1,106 @@
+$post-card-border-color: #f7fafa;
+$post-card-height: rhythm(8);
+$post-card-info-height: rhythm(4);
+$post-card-section-height: rhythm(4);
+$post-card-info-color: #fff;
+
+ul.featured-posts {
+    @include scut-list-unstyled;
+}
+
+.featured-post {
+    padding: rhythm();
+
+    @include minWidth($bp-phone--wide) {
+        padding: 0;
+    }
+
+    .featured-post-title {
+        margin: 0 0 rhythm(0.5);
+    }
+}
+
+ul.post-stack {
+    @include scut-list-unstyled;
+    @include row;
+}
+
+.post-card {
+    height: $post-card-height;
+    overflow: hidden;
+
+    @include minWidth($bp-phone--wide) {
+        @include column(6);
+        border: 1px solid $post-card-border-color;
+        margin-bottom: rhythm() !important;
+    }
+
+    @include minWidth($bp-tablet--wide) {
+        @include column(4);
+    }
+
+    @include minWidth($bp-desktop) {
+        @include column(3);
+    }
+
+    article {
+        @include linear-gradient(135deg, $post-card-border-color, #eee);
+        background-position: center;
+        background-repeat:  no-repeat;
+        background-size: cover;
+        height: $post-card-height;
+        position: relative;
+    }
+
+    .post-card-info {
+        background: rgba(0, 0, 0, 0.5);
+        bottom: 0;
+        color: $post-card-info-color;
+        height: $post-card-info-height;
+        padding: rhythm();
+        position: absolute;
+        width: 100%;
+
+        @include minWidth($bp-phone--wide) {
+            padding: rhythm(0.5);
+        }
+    }
+
+    .post-card-title {
+        font-weight: $font-weight--normal;
+        margin: 0 0 rhythm(0.5);
+    }
+
+    .post-card-tags {
+        @include cf;
+        bottom: rhythm();
+        font-size: $font-size--xs;
+        left: rhythm();
+        position: absolute;
+        right: rhythm();
+
+        @include minWidth($bp-phone--wide) {
+            bottom: rhythm(0.5);
+            left: rhythm(0.5);
+            right: rhythm(0.5);
+        }
+    }
+
+    .post-card-tag-list-prefix, .post-card-tag {
+        margin-right: rhythm(0.25);
+    }
+
+    .post-card-tag-list {
+        @include scut-list-floated;
+    }
+
+    .post-card-tag {
+        &::after {
+            content: ", "
+        }
+
+        &:nth-last-child(2):after {
+            content: "";
+        }
+    }
+}

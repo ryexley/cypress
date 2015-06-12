@@ -7,6 +7,7 @@
 @import "media";
 @import "prism";
 @import "icons";
+@import "posts";
 
 /*! Cypress styles */
 
@@ -71,77 +72,4 @@ header.main {
     @include minWidth($bp-phone--wide) {
         padding: rhythm();
     }
-}
-
-ul.featured-posts {
-    @include scut-list-unstyled;
-}
-
-.featured-post {
-    padding: rhythm();
-
-    @include minWidth($bp-phone--wide) {
-        padding: 0;
-    }
-
-    .featured-post-title {
-        margin: 0 0 rhythm(0.5);
-    }
-}
-
-ul.post-stack {
-    @include scut-list-unstyled;
-    @include row;
-}
-
-.post-card {
-    height: $post-card-height;
-    overflow: hidden;
-
-    @include minWidth($bp-phone--wide) {
-        @include column(6);
-        border: 1px solid $post-card-border-color;
-        // border-radius: rhythm(0.5);
-        margin-bottom: rhythm() !important;
-    }
-
-    @include minWidth($bp-tablet--wide) {
-        @include column(4);
-    }
-
-    @include minWidth($bp-desktop) {
-        @include column(3);
-    }
-
-    a {
-        color: $post-card-title-color;
-        text-decoration: none;
-
-        &:hover {
-            color: $link-color;
-        }
-    }
-
-    .post-card-header, .post-card-title-container {
-        height: $post-card-section-height;
-    }
-
-    .post-card-header {
-        background-position: center;
-        background-repeat:  no-repeat;
-        background-size: cover;
-    }
-
-    .post-card-title-container {
-        padding: rhythm();
-    }
-
-    .post-card-title {
-        // color: $post-card-title-color;
-        margin: 0;
-    }
-
-    .post-card-clip {}
-
-    .post-card-meta {}
 }

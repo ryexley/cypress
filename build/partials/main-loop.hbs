@@ -20,11 +20,22 @@
 {{#foreach posts}}
     <li class="post-card">
         <a href="{{url}}">
-            <section class="post-card-header {{post_class}}" {{#if image}}style="background-image: url({{image}})"{{/if}}>
-            </section>
-            <section class="post-card-title-container">
-                <h4 class="post-card-title">{{title}}</h4>
-            </section>
+            <article {{#if image}}style="background-image: url({{image}})"{{/if}}>
+                <section class="post-card-info">
+                    <h4 class="post-card-title">{{title}}</h4>
+                    {{#if tags}}
+                    <section class="post-card-tags">
+                        <ul class="post-card-tag-list">
+                            <li class="post-card-tag-list-prefix">&#123;</li>
+                            {{#foreach tags}}
+                            <li class="post-card-tag" title="{{name}}">{{name}}</li>
+                            {{/foreach}}
+                            <li>&#125;</li>
+                        </ul>
+                    </section>
+                    {{/if}}
+                </section>
+            </article>
         </a>
     </li>
 {{/foreach}}

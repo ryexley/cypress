@@ -5,6 +5,9 @@ $background-color: #fff;
 $link-color: #0cf;
 $link-hover-color: #f00;
 
+$font-size--xs: 0.75em;
+$font-size--s: 0.85em;
+
 $font-weight--normal: 300;
 $font-weight--semibold: 600;
 $font-weight--bold: 800;
@@ -30,9 +33,3 @@ $bp-tablet--wide: 880;
 $bp-laptop: 1024;
 $bp-desktop: 1280;
 $bp-desktop--retina: 1440;
-
-// posts
-$post-card-border-color: #f7fafa;
-$post-card-height: rhythm(8);
-$post-card-section-height: rhythm(4);
-$post-card-title-color: #444;
