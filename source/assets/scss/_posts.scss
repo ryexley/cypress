@@ -10,28 +10,37 @@ ul.featured-posts {
 }
 
 .featured-post {
-    border-bottom: 1px solid $separator-color;
-    margin: 0 0 rhythm(2) 0;
     padding: rhythm();
     position: relative;
 
     @include minWidth($bp-phone--wide) {
         padding: 0;
+        margin: 0 0 rhythm() 0;
         padding-bottom: rhythm();
     }
 
     &:after {
         background: #fff;
-        bottom: rhythm(-0.375);
+        bottom: rhythm(0.3333333);
         color: $separator-color;
         content: "\272F";
         height: rhythm(0.75);
         font-size: rhythm();
-        left: 48%;
-        margin: auto;
+        left: 50%;
+        margin: auto auto auto rhythm(-0.375);
         position: absolute;
         text-align: center;
         width: rhythm(0.75);
+    }
+
+    article {
+        border-bottom: 1px solid $separator-color;
+        padding-bottom: rhythm();
+
+        @include minWidth($bp-fixed) {
+            width: scut-em($bp-tablet--wide);
+            margin: auto;
+        }
     }
 
     a {
@@ -42,6 +51,7 @@ ul.featured-posts {
         display: inline;
         font-weight: $font-weight--normal;
         margin: 0 0 rhythm(0.5);
+        // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
     }
 }
 
@@ -108,6 +118,7 @@ ul.post-stack {
     .post-card-title {
         font-weight: $font-weight--normal;
         margin: 0 0 rhythm(0.5);
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     }
 
     .post-card-tags {

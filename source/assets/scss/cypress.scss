@@ -10,7 +10,9 @@
 @import "posts";
 @import "pagination";
 
-/*! Cypress styles */
+/*!
+Cypress theme styles
+*/
 
 * {
     box-sizing: border-box;
@@ -60,11 +62,13 @@ header.main {
     color: $blog-title-color;
     font-weight: $font-weight--normal;
     text-decoration: none;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
 
 .blog-description {
     color: $blog-description-color;
     font-weight: $font-weight--normal;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
 }
 
 .feature-image {

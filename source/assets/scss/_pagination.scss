@@ -1,13 +1,18 @@
 .pagination {
-    @include row;
+    @include cf;
+    background: #f7fafb;
     display: block;
+    padding: rhythm() rhythm(0.5);
     text-align: center;
+}
+
+.pagination-pages {
+    padding: 0 0 rhythm();
 }
 
 .pagination-previous,
 .pagination-next {
     @include column(6);
-
     min-height: rhythm();
     text-align: center;
 }
@@ -20,5 +25,10 @@
 .pagination-next-link {
     display: block;
     font-size: rhythm(2);
+    padding: rhythm(0.25);
     text-decoration: none;
+
+    &:hover {
+        background: rgba(0, 0, 0, 0.05);
+    }
 }
