@@ -18,11 +18,16 @@
 </ul>
 <ul class="post-stack">
 {{#foreach posts}}
-    <li class="post-card {{post_class}}">
+    <li>
         <a href="{{url}}">
-            <article {{#if image}}style="background-image: url({{image}})"{{/if}}>
-                <section class="post-card-info">
+            <article class="post-card {{post_class}}">
+                <header>
                     <h4 class="post-card-title">{{title}}</h4>
+                </header>
+                <section class="post-card-excerpt">
+                    <p>{{excerpt words="20"}}...</p>
+                </section>
+                <footer class="post-card-meta">
                     {{#if tags}}
                     <section class="post-card-tags">
                         <ul class="post-card-tag-list">
@@ -34,7 +39,7 @@
                         </ul>
                     </section>
                     {{/if}}
-                </section>
+                </footer>
             </article>
         </a>
     </li>
