@@ -1,0 +1,17 @@
+{
+  "name": "cypress",
+  "version": "0.0.1",
+  "description": "My custom theme for the Ghost blog engine, forked and adapted from the original default Casper theme",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ryexley/cypress.git"
+  },
+  "devDependencies": {
+    "stylus": "~0.38.0",
+    "nib": "~1.0.1",
+    "grunt": "~0.4.1",
+    "grunt-contrib-stylus": "~0.8.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
